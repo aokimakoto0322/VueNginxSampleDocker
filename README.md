@@ -9,21 +9,6 @@ https://github.com/vitejs/vite/issues/19242
 ## docker EC2からgit cloneする方法
 https://qiita.com/kn_program/items/c41c62f465368f0b0152
 
-## EC2にnodeをインストール
-`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
-`source ~/.bashrc`
-`nvm -v`
-`nvm install --lts --latest-npm`
-`node -v`
-
-`curl -o- -L https://yarnpkg.com/install.sh | bash`
-一回SSH接続を切り、再接続させる
-`source ~/.bashrc`
-
-`npm -v`
-
-
-
 ## EC2でDockerのインストール
 `sudo yum install -y docker`          # dockerのインストール
 `sudo service docker start`           # dockerの起動
@@ -37,3 +22,10 @@ https://qiita.com/kn_program/items/c41c62f465368f0b0152
 `docker compose version`
 
 `sudo chmod 666 /var/run/docker.sock` # docker.sockの読み取り・書き込み権限を666にしないとdocker-compose up -d できなかったため
+
+## nuxt起動
+`docker exec -it [コンテナ名] bash`
+`yarn install`
+`yarn run build`
+`yarn nuxt start` # 本番用にサーバーを起動
+
