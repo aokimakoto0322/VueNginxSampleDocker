@@ -10,7 +10,7 @@ services:
       - ./front/app:/app
     tty: true
     #restart: on-failure
-    command: yarn dev
+    # command: yarn dev
     # command: yarn nuxt start 本番
     working_dir: /app
 
