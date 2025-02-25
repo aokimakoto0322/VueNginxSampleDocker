@@ -13,6 +13,18 @@ services:
     # command: yarn dev
     # command: yarn nuxt start 本番
     working_dir: /app
+  
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001
+    tty: true
+    volumes:
+      - type: bind
+        source: .
+        target: /app
 
   server:
     build:

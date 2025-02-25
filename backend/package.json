@@ -1,0 +1,11 @@
+{
+    "name": "nodejs-omikuji-app",
+    "version": "1.0.0",
+    "description": "Simple Node.js Server",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {},
+    "private": true
+  }
