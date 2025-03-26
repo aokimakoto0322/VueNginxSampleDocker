@@ -39,5 +39,12 @@ services:
     tty: true
     #restart: on-failure
 
+  jenkins:
+    image: jenkins/jenkins:latest
+    ports:
+      - 18080:8080
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+
 volumes:
   front_node_modules:
