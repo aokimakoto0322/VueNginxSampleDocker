@@ -1,0 +1,3 @@
+[submodule "VueNginxSample_front"]
+	path = VueNginxSample_front
+	url = https://github.com/aokimakoto0322/VueNginxSample_front.git

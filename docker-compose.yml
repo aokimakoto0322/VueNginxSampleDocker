@@ -2,16 +2,16 @@ version: '3'
 services:
   front:
     build:
-      context: ./front
+      context: ./front-dockerfile
       dockerfile: Dockerfile
     ports:
       - 3000:3000
     volumes:
-      - ./front/app:/app
+      - ./VueNginxSample_front/app:/app
     tty: true
     #restart: on-failure
     # command: yarn dev
-    # command: yarn nuxt start 本番
+    # command: yarn nuxt start
     working_dir: /app
   
   backend:
