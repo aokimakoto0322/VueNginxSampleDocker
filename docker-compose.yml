@@ -2,17 +2,29 @@ version: '3'
 services:
   front:
     build:
-      context: ./front
+      context: ./front-dockerfile
       dockerfile: Dockerfile
     ports:
       - 3000:3000
     volumes:
-      - ./front/app:/app
+      - ./VueNginxSample_front/app:/app
     tty: true
     #restart: on-failure
     # command: yarn dev
-    # command: yarn nuxt start 本番
+    # command: yarn nuxt start
     working_dir: /app
+  
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001
+    tty: true
+    volumes:
+      - type: bind
+        source: .
+        target: /app
 
   server:
     build:
@@ -26,6 +38,13 @@ services:
       - ./server/log:/var/log/nginx
     tty: true
     #restart: on-failure
+
+  jenkins:
+    image: jenkins/jenkins:latest
+    ports:
+      - 18080:8080
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
 
 volumes:
   front_node_modules:
